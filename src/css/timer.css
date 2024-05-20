@@ -13,6 +13,7 @@ body {
     letter-spacing: 0.04em;
     color: #2e2f42;
     padding: 0 16px;
+    margin-top: 36px;
 }
 
 #datetime-picker:hover {
@@ -22,21 +23,6 @@ body {
 #datetime-picker:active {
     border: 1px solid #4e75ff;
 }
-
-/* .flatpickr-day:hover {
-    
-}
-
-.flatpickr-day today {
-    border-radius: 100%;
-    stroke-width: 1px;
-    stroke: #4e75ff;
-}
-
-.flatpickr-day selected {
-    border-radius: 100%;
-    fill: #4e75ff;
-} */
 
 button {
     border: none;
@@ -49,7 +35,18 @@ button {
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.04em;
+    background: #4e75ff;
+    color: #fff;
+}
+
+button:hover {
+    background: #6c8cff;
+    color: #fff; 
+}
+
+button:disabled {
     color: #989898;
+    background: #cfcfcf;
 }
 
 .timer {
