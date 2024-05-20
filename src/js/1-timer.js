@@ -30,28 +30,26 @@ const options = {
         } else {
             startBtn.disabled = false;
         }
-        // console.log(selectedDates[0]);
     },
 };
 flatpickr("#datetime-picker", options);
 
 startBtn.addEventListener("click", startTimer);
 function startTimer() {
-    // startBtn.disabled = true;
-    // textInput.disabled = false;
     timerInterval = setInterval(() => {
         const currentDate = Date.now();
         const deltaTime = userSelectedDate - currentDate;
+        const { days, hours, minutes, seconds } = convertMs(deltaTime);
+        updateTimer({ days, hours, minutes, seconds });
         if (deltaTime <= 0) {
             clearInterval(timerInterval);
             startBtn.disabled = true;
             textInput.disabled = false;
             return;
+        } else {
+            startBtn.disabled = true;
+            textInput.disabled = true;
         }
-        startBtn.disabled = true;
-        textInput.disabled = true;
-        const { days, hours, minutes, seconds } = convertMs(deltaTime);
-        updateTimer({ days, hours, minutes, seconds });
     }, 1000)
 }
 
