@@ -45,7 +45,7 @@ function startTimer() {
             clearInterval(timerInterval);
             startBtn.disabled = true;
             textInput.disabled = false;
-            return;
+            updateTimer({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         } else {
             startBtn.disabled = true;
             textInput.disabled = true;
